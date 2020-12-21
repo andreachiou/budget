@@ -33,7 +33,7 @@ spec = do
 
         it "can be built from a text file" $ do
             let fileContent = "key:value\nother:other\n"
-                fp = "test/test-config" 
+                fp = "test/test-config"
             writeFile fp fileContent
             cfg <- runExceptT (fromFile fp)
             cfg `shouldBe` Right
@@ -48,20 +48,20 @@ spec = do
         it "can retrieve a value for a given key" $ do
             let cfg = [ ("KEY","Value")
                       , ("OTHER","Something Else")
-                      ] 
+                      ]
             value <- runExceptT (cfg `atKey` "KEY")
             value `shouldBe` Right "Value"
 
         it "yields a message if the key can't be found" $ do
             let cfg = [ ("KEY","Value")
                       , ("OTHER","Something Else")
-                      ] 
+                      ]
             value <- runExceptT (cfg `atKey` "FOO")
             value `shouldBe` Left "key not found in configuration: FOO"
 
         it "can retrieve a value for a given key from a given file" $ do
             let fileContent = "key:value\nother:other\n"
-                fp = "test/test-config" 
+                fp = "test/test-config"
             writeFile fp fileContent
             value <- runExceptT (valueAtKeyFromFile "KEY" fp)
             value `shouldBe` Right "value"

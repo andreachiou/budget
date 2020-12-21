@@ -7,6 +7,7 @@ import Sorting
 import Category
 import Period
 import SelectionType
+import YearlySelectionType
 
 import Control.Monad.Except
 import Test.Hspec
@@ -266,6 +267,33 @@ spec = do
                 let args = words "import"
                 cmd <- runExceptT $ command args
                 cmd `shouldBe` Left "import: missing argument (import {<filename> <accountname> | <folder> }" 
+
+        describe "Yearly" $ do
+            it "recognize the yearly command with no arguments" $ do
+                let args = words "yearly"
+                cmd <- runExceptT $ command args
+                cmd `shouldBe` Right (Yearly Absolute Nothing)
+
+            it "recognize the yearly command with absolute argument" $ do
+                let args = words "yearly -a"
+                cmd <- runExceptT $ command args
+                cmd `shouldBe` Right (Yearly Absolute Nothing)
+
+            it "recognize the yearly command with running argument" $ do
+                let args = words "yearly -r"
+                cmd <- runExceptT $ command args
+                cmd `shouldBe` Right (Yearly Running Nothing)
+
+            it "recognize the yearly command with to date argument" $ do
+                let args = words "yearly -t"
+                cmd <- runExceptT $ command args
+                cmd `shouldBe` Right (Yearly ToDate Nothing)
+
+            it "recognize the yeally command with a month option" $ do
+                let args = words "yearly -m 2021 03"
+                cmd <- runExceptT $ command args
+                cmd `shouldBe` 
+                    Right (Yearly Absolute (Just (Period (theDay 2021 03 01) (theDay 2021 03 31))))
 
         describe "Help" $ do
             it "recognize the help command" $ do

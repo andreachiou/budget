@@ -73,9 +73,9 @@ doCommand cfg (Import importFilePath Nothing) = do
         True -> do
             directory <- liftIO (importDirectory importFilePath)
             either (liftIO . exitWithMsg) (mapM_ (\filePath -> doCommand cfg (Import filePath Nothing))) directory
-            
 
-        
+doCommand _ (Yearly _ _) = undefined
+
 doCommand _ (Help arg) = liftIO (help arg)
 
 doCommand _ Version = liftIO $ putStrLn $ unlines $ [ "budget " ++ show versionNumber

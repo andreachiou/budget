@@ -1,10 +1,10 @@
 cabal-version: 1.12
 
--- This file has been generated from package.yaml by hpack version 0.31.2.
+-- This file has been generated from package.yaml by hpack version 0.33.0.
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 11fc0c382f58cb6bf80335fe0bc00207bbea12980bac8b881bc894fe6c41e6e7
+-- hash: 92870179976de49173e2369732b6a201ab31d079498f4683b63ef3fec633d612
 
 name:           budget
 version:        1.0.1.0
@@ -58,6 +58,7 @@ library
       Transaction
       TransactionList
       VersionNumber
+      YearlySelectionType
   other-modules:
       Paths_budget
   hs-source-dirs:

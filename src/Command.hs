@@ -7,6 +7,7 @@ import Message ( Message )
 import Period
 import Same
 import Sorting
+import YearlySelectionType
 
 import Control.Monad.Except
 import Data.Char
@@ -23,6 +24,9 @@ data Command
               , detailSortingCriteria     :: SortingCriteria 
               }
     | Import FilePath (Maybe String)
+    | Yearly { yearlySelectionType        :: YearlySelectionType
+             , yearlyPeriod               :: (Maybe Period)
+             }
     | Help  [String]
     | Version
             
@@ -38,6 +42,7 @@ command (cmd:args)
   | cmd `equals` "import" && length args == 2 = domain $ Right (Import (args!!0) (Just (args!!1)))
   | cmd `equals` "import" && length args == 1 = domain $ Right (Import (args!!0) Nothing)
   | cmd `equals` "import" && length args < 1 = domain $ Left "import: missing argument (import {<filename> <accountname> | <folder> }"
+  | cmd `equals` "yearly" = domain $ (Yearly Absolute Nothing) `with` args
   | cmd `equals` "help" = domain $ Right (Help args)
   | cmd `equals` "version" = domain $ Right Version
 command (cmd:args) = throwError $ "unknown command: "++ unwords (cmd:args)
@@ -109,6 +114,15 @@ cmd@(Detail _ _ _ _) `with` ("-y":arg:args) =
 
 cmd@(Detail _ _ _ _) `with` ("-s":arg:args) = 
     (\c -> cmd { detailSortingCriteria = c }) <$> validateCriteria DetailSortingCriteria arg >>= (`with` args)
+
+cmd@(Yearly _ _) `with` ("-a":args) = cmd { yearlySelectionType = Absolute } `with` args
+
+cmd@(Yearly _ _) `with` ("-r":args) = cmd { yearlySelectionType = Running } `with` args
+
+cmd@(Yearly _ _) `with` ("-t":args) = cmd { yearlySelectionType = ToDate } `with` args
+
+cmd@(Yearly  _ _ ) `with` ("-m":arg1:arg2:args)  = 
+    (\p -> cmd { yearlyPeriod = Just p }) <$> periodFromMonthString arg1 arg2 >>= (`with`args)
 
 
 _ `with` (arg:_) = Left ("option unrecognized or incomplete: " ++ arg)

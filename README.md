@@ -30,7 +30,13 @@
 - [ ] after importing a file, tell how many transactions were imported, and list the transactions that were rejected because they are duplicates (on the Date, Amount, Name criteria)
 - [x] do not reject the whole file when a file to be imported contains transactions already imported and some that are not yet imported
 - [ ] clarify the examples in the tests (e.g import)
+- [ ] fix the example in the help section for import
 - [X] add a test to import where status is different from posted, reproduce the bug about filtering order
+- [ ] add a command `budget yearly (y)` that prints a report comparing totals per category for the current year and the past year. Options are 
+    - a absolute year : e.g compare jan 21 to mar 21 with jan 20 to dec 20
+    - r running year  : e.g compare apr 20 to mar 21 with apr 19 to mar 20
+    - t year to date  : e.g compare jan 21 to mar 21 with jan 20 to mar 21
+    - m YYYY MM       : set the month and year of reference for curent year
 
 ## how to run the tests
 

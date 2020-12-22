@@ -37,6 +37,7 @@
     - r running year  : e.g compare apr 20 to mar 21 with apr 19 to mar 20
     - t year to date  : e.g compare jan 21 to mar 21 with jan 20 to mar 21
     - m YYYY MM       : set the month and year of reference for curent year
+- [ ] `budget yearly` with option `-c` can do the yearly report for a category selection file
 
 ## how to run the tests
 

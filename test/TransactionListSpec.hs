@@ -63,7 +63,7 @@ spec = do
                          , transactionDate    = theDay 2020 9 1
                          , transactionNotes   = Just $ Note "t5 bad transaction"
                          , transactionName    = Just $ Name "General"
-                         , transactionCategory = Category "Devices"
+                         , transactionCategory = Category "Travel Expenses"
                          , transactionAmount   = amount (-40050.00)
                          }
     let t6 = Transaction { transactionAccount = Account "forecasted"
@@ -84,7 +84,7 @@ spec = do
                          , transactionDate    = theDay 2020 8 6
                          , transactionNotes   = Just $ Note "t8 a long note indeed"
                          , transactionName    = Just $ Name "A name that contains more than forty characters" 
-                         , transactionCategory = Category "Devices"
+                         , transactionCategory = Category "Travel Expenses"
                          , transactionAmount   = amount (-1000.00)
                          }
     let t9 = Transaction { transactionAccount = Account "Investment"
@@ -175,12 +175,22 @@ spec = do
             snd td  `shouldBe` [t4,t5,t9] 
             fst td  `shouldBe` [t1,t2,t3,t6,t7,t8]
 
-
     it "can be totaled" $ do
         let ts = [ simplified 2020 4 5 "Training" 48.07 
                  , simplified 2020 4 7 "Food" 42.17 
                  , simplified 2020 4 9 "Business Expenses" 1000.00 ]
         totalTransactions ts `shouldBe` amount 1090.24
+    
+    it "can be created from a list of transaction from a period" $ do
+        let ts = [t1,t2,t3,t4,t5,t6,t7,t8,t9]
+        let tp = fromPeriod (Period (theDay 2020 08 1) (theDay 2020 09 31)) ts
+        tp `shouldBe` [t4,t5,t6,t7,t8,t9]
+
+    it "can be collected in transaction groups by category" $ do
+        let ts = [t1,t2,t3,t4,t5,t6,t7,t8,t9]
+        let gs= groupByCategory ts
+        map (categoryName.transactionCategory.head) gs `shouldBe`
+            ["Devices","Groceries","Travel Expenses"]
 
     describe "can have an average" $ do
         it "for a period of one months" $ do

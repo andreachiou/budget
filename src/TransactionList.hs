@@ -2,6 +2,7 @@ module TransactionList ( TransactionList
                        , averageTransactionsPerMonth
                        , checkNotEmpty
                        , fromPeriod
+                       , groupByCategory
                        , totalTransactions
                        , summarizeTransactionsMonths
                        , transactionDeduplicate
@@ -13,11 +14,14 @@ module TransactionList ( TransactionList
     where
 
 import Amount
+import Category
 import Domain
 import Message
 import Period
+import Same
 import SummaryLine
 import Transaction
+import Data.Ord
 
 import Data.Csv
     ( HasHeader(NoHeader)
@@ -85,6 +89,8 @@ checkNotEmpty :: TransactionList -> Either Message TransactionList
 checkNotEmpty [] = Left "no transaction"
 checkNotEmpty ts = Right ts
 
-fromPeriod :: Period -> TransactionList -> TransactionList
+fromPeriod :: Period -> [Transaction] -> TransactionList
 fromPeriod p = filter ((`within` p) . transactionDate)
 
+groupByCategory :: [Transaction] -> [[Transaction]]
+groupByCategory = groupBy (same (categoryName . transactionCategory)) . sortBy (comparing (categoryName . transactionCategory)) 

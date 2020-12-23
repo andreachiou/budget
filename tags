@@ -109,9 +109,9 @@ spec spec14,15
 module ImportFileNameSpecImportFileNameSpec0,1
 spec spec8,9
 
-./src/Yearly.hs,55
+./src/Yearly.hs,57
 module Yearly Yearly0,1
-yearlyLines yearlyLines6,7
+yearlyLines yearlyLines10,11
 
 ./src/CategorySelection.hs,494
 data CategorySelection CategorySelection16,17
@@ -258,6 +258,14 @@ printConfig printConfig219,220
 ./src/MaybeToEither.hs,73
 module MaybeToEither MaybeToEither0,1
 maybeToEither maybeToEither3,4
+
+./src/YearlyLine.hs,341
+module YearlyLine YearlyLine0,1
+data YearlyLine = YearlyLine { yearlyLineCategory yearlyLineCategory7,8
+                             , yearlyLineCurrentAmount yearlyLineCurrentAmount8,9
+                             , yearlyLinePreviousAmount yearlyLinePreviousAmount9,10
+instance Show Show YearlyLine13,14
+        show show15,16
 
 ./src/Name.hs,215
 newtype Name Name10,11

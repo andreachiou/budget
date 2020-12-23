@@ -1,5 +1,6 @@
 module CategorySelection ( CategorySelection (..)
                          , CategorySelector
+                         , allCategories
                          , categorySelection 
                          , excluded
                          , categorySelector
@@ -19,6 +20,9 @@ data CategorySelection = AllCategories
     deriving (Eq)
 
 type CategorySelector = (Transaction -> Bool)
+
+allCategories :: CategorySelector
+allCategories = const True
 
 categorySelection :: String -> CategorySelection
 categorySelection "" = AllCategories

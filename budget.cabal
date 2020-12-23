@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 92870179976de49173e2369732b6a201ab31d079498f4683b63ef3fec633d612
+-- hash: 2e0976eb0db4a1bb98b2e30c81f701d5516fd97c5a8803e148571943ec578d2b
 
 name:           budget
 version:        1.0.1.0
@@ -126,6 +126,7 @@ test-suite budget-test
       TransactionListSpec
       TransactionSpec
       VersionNumberSpec
+      YearlySpec
       Paths_budget
   hs-source-dirs:
       test

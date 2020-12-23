@@ -18,3 +18,4 @@ instance Show SummaryLine
                 (categoryName cat) (show amt) (show avg)
 
 
+

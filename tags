@@ -19,6 +19,10 @@ simplified simplified18,19
 writeTestFile writeTestFile26,27
 spec spec31,32
 
+./test/YearlySelectionSpec.hs,66
+module YearlySelectionSpecYearlySelectionSpec0,1
+spec spec6,7
+
 ./test/PeriodSpec.hs,48
 module PeriodSpecPeriodSpec0,1
 spec spec6,7
@@ -32,9 +36,9 @@ module CategoryListSpecCategoryListSpec0,1
 writeTestFile writeTestFile10,11
 spec spec15,16
 
-./test/YearlySpec.hs,48
+./test/YearlySpec.hs,50
 module YearlySpecYearlySpec0,1
-spec spec5,6
+spec spec10,11
 
 ./test/CategorySpec.hs,54
 module CategorySpecCategorySpec1,2
@@ -104,6 +108,10 @@ spec spec14,15
 ./test/ImportFileNameSpec.hs,64
 module ImportFileNameSpecImportFileNameSpec0,1
 spec spec8,9
+
+./src/Yearly.hs,55
+module Yearly Yearly0,1
+yearlyLines yearlyLines6,7
 
 ./src/CategorySelection.hs,494
 data CategorySelection CategorySelection16,17
@@ -176,12 +184,14 @@ instance FromField FromField Account17,18
 instance ToField ToField Account23,24
     toField toField24,25
 
-./src/YearlySelection.hs,269
-module YearlySelection YearlySelection0,1
-data YearlySelectionType YearlySelectionType3,4
-data YearlySelectionType = Absolute Absolute3,4
-data YearlySelectionType = Absolute | Running Running3,4
-data YearlySelectionType = Absolute | Running | ToDateToDate3,4
+./src/YearlySelection.hs,368
+data YearlySelectionType YearlySelectionType6,7
+data YearlySelectionType = Absolute Absolute6,7
+data YearlySelectionType = Absolute | Running Running6,7
+data YearlySelectionType = Absolute | Running | ToDateToDate6,7
+data YearlySelection YearlySelection9,10
+data YearlySelection = YearlySelection YearlySelection9,10
+yearlySelection yearlySelection12,13
 
 ./src/Same.hs,37
 module Same Same0,1

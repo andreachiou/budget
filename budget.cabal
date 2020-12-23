@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 5b3401efda5e0e7ce7ea79f3ca1421245d10403392392fd8c2c6b88c590aa4d4
+-- hash: 66c2fb6b7927e34a10e5593d62e4baf9f88eb7faf1977627a356ed82cd96a78d
 
 name:           budget
 version:        1.0.1.0
@@ -58,6 +58,8 @@ library
       Transaction
       TransactionList
       VersionNumber
+      Yearly
+      YearlyLine
       YearlySelection
   other-modules:
       Paths_budget

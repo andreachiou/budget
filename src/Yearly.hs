@@ -1,4 +1,5 @@
-module Yearly ( yearlyLines )
+module Yearly ( yearlyLines
+              , yearlyTitle)
     where
 
 import Amount
@@ -8,9 +9,10 @@ import TransactionList      (fromPeriod, groupByCategory, totalTransactions)
 import YearlyLine ( YearlyLine (..))
 import YearlySelection      (YearlySelection (..))
 import CategorySelection    (CategorySelector)
+import Text.Printf
 
 yearlyLines :: YearlySelection -> CategorySelector -> [Transaction] -> [String]
-yearlyLines (YearlySelection cy py) _ ts = map show yls
+yearlyLines (YearlySelection _ cy py) _ ts = map show yls
     where 
         cgs = (map categoryAndTotal . groupByCategory . fromPeriod cy) ts
         pgs = (map categoryAndTotal . groupByCategory . fromPeriod py) ts
@@ -24,5 +26,8 @@ zipYearlyGroups [] ((c,a):gs) = YearlyLine c 0 a : zipYearlyGroups [] gs
 zipYearlyGroups ((cc,ca):cgs) ((pc,pa):pgs) | cc < pc = YearlyLine cc ca 0 : zipYearlyGroups cgs ((pc,pa):pgs)
 zipYearlyGroups ((cc,ca):cgs) ((pc,pa):pgs) | cc > pc = YearlyLine pc 0 pa : zipYearlyGroups ((cc,ca):cgs) pgs
 zipYearlyGroups ((cc,ca):cgs) ((_,pa):pgs) | otherwise = YearlyLine cc ca pa : zipYearlyGroups cgs pgs
+
+yearlyTitle :: YearlySelection -> CategorySelector -> String 
+yearlyTitle   ys _ = printf "Yearly report for all categories : %s" (show ys)
 
 

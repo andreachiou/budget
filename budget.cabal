@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 2e0976eb0db4a1bb98b2e30c81f701d5516fd97c5a8803e148571943ec578d2b
+-- hash: 5b3401efda5e0e7ce7ea79f3ca1421245d10403392392fd8c2c6b88c590aa4d4
 
 name:           budget
 version:        1.0.1.0
@@ -58,7 +58,7 @@ library
       Transaction
       TransactionList
       VersionNumber
-      YearlySelectionType
+      YearlySelection
   other-modules:
       Paths_budget
   hs-source-dirs:
@@ -126,6 +126,7 @@ test-suite budget-test
       TransactionListSpec
       TransactionSpec
       VersionNumberSpec
+      YearlySelectionSpec
       YearlySpec
       Paths_budget
   hs-source-dirs:

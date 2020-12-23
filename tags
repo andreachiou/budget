@@ -1,315 +1,430 @@
-(*)	./src/Amount.hs	43
-(+)	./src/Amount.hs	42
-Absolute	./src/YearlySelectionType.hs	4
-Account	./src/Account.hs	15
-Account	./src/Account.hs	15
-AccountAsc	./src/Sorting.hs	24
-AccountDesc	./src/Sorting.hs	25
-AccountSpec	./test/AccountSpec.hs	1
-AllCategories	./src/CategorySelection.hs	16
-Amount	./src/Amount.hs	11
-Amount	./src/Amount.hs	11
-AmountAsc	./src/Sorting.hs	30
-AmountDesc	./src/Sorting.hs	31
-AmountSpec	./test/AmountSpec.hs	1
-Asc	./src/Sorting.hs	20
-CatchShowIO	./src/CatchShowIO.hs	1
-CategoriesFromFile	./src/CategorySelection.hs	18
-Category	./src/Category.hs	18
-Category	./src/Category.hs	18
-CategoryAsc	./src/Sorting.hs	26
-CategoryDesc	./src/Sorting.hs	27
-CategoryList	./src/CategoryList.hs	17
-CategoryListSpec	./test/CategoryListSpec.hs	1
-CategorySelection	./src/CategorySelection.hs	16
-CategorySelectionSpec	./test/CategorySelectionSpec.hs	1
-CategorySelector	./src/CategorySelection.hs	21
-CategorySpec	./test/CategorySpec.hs	2
-Command	./src/Command.hs	15
-CommandCriteria	./src/Sorting.hs	38
-CommandSpec	./test/CommandSpec.hs	1
-Configuration	./src/Configuration.hs	17
-ConfigurationSpec	./test/ConfigurationSpec.hs	1
-Date	./src/Date.hs	16
-DateAsc	./src/Sorting.hs	28
-DateDesc	./src/Sorting.hs	29
-DecodeString	./src/DecodeString.hs	1
-Desc	./src/Sorting.hs	20
-Detail	./src/Command.hs	21
-Detail	./src/Detail.hs	1
-DetailSortingCriteria	./src/Sorting.hs	38
-DetailSpec	./test/DetailSpec.hs	2
-Direction	./src/Sorting.hs	20
-Domain	./src/Domain.hs	14
-DomainSpec	./test/DomainSpec.hs	1
-Excluded	./src/SelectionType.hs	4
-ExitWithMsg	./src/ExitWithMsg.hs	1
-FieldToString	./src/FieldToString.hs	1
-FromField Account	./src/Account.hs	18
-FromField Amount	./src/Amount.hs	58
-FromField Category	./src/Category.hs	26
-FromField Date	./src/Date.hs	31
-FromField Name	./src/Name.hs	17
-FromField Note	./src/Note.hs	17
-FromRecord Category	./src/Category.hs	21
-FromRecord Transaction	./src/Transaction.hs	53
-Help	./src/Command.hs	30
-Help	./src/Help.hs	1
-HelpSpec	./test/HelpSpec.hs	1
-Import	./src/Command.hs	26
-Import	./src/Import.hs	1
-ImportFileName	./src/ImportFileName.hs	1
-ImportFileNameSpec	./test/ImportFileNameSpec.hs	1
-ImportSpec	./test/ImportSpec.hs	1
-IsCsvFile	./src/IsCsvFile.hs	1
-Key	./src/Configuration.hs	15
-Main	./app/Budget.hs	2
-MaybeToEither	./src/MaybeToEither.hs	1
-Message	./src/Message.hs	1
-Name	./src/Name.hs	11
-NameAsc	./src/Sorting.hs	32
-NameDesc	./src/Sorting.hs	33
-NbMonths	./src/Summary.hs	20
-Note	./src/Note.hs	11
-NoteSpec	./test/NoteSpec.hs	2
-NotesAsc	./src/Sorting.hs	34
-NotesDesc	./src/Sorting.hs	35
-Num Amount	./src/Amount.hs	40
-Period	./src/Period.hs	21
-Period	./src/Period.hs	21
-PeriodSpec	./test/PeriodSpec.hs	1
-Read Amount	./src/Amount.hs	31
-Running	./src/YearlySelectionType.hs	4
-Same	./src/Same.hs	1
-Selected	./src/SelectionType.hs	4
-SelectionType	./src/SelectionType.hs	1
-ShouldBeOutput	./test/ShouldBeOutput.hs	1
-Show Amount	./src/Amount.hs	22
-Show CategorySelection	./src/CategorySelection.hs	51
-Show Date	./src/Date.hs	25
-Show Name	./src/Name.hs	14
-Show Note	./src/Note.hs	14
-Show Period	./src/Period.hs	24
-Show SummaryLine	./src/SummaryLine.hs	14
-Show VersionNumber	./src/VersionNumber.hs	9
-SingleCategory	./src/CategorySelection.hs	17
-SortCriterion	./src/Sorting.hs	23
-Sorting	./src/Sorting.hs	1
-SortingCriteria	./src/Sorting.hs	19
-SortingSpec	./test/SortingSpec.hs	1
-Summary	./src/Command.hs	16
-Summary	./src/Summary.hs	1
-SummaryLine	./src/SummaryLine.hs	1
-SummarySortingCriteria	./src/Sorting.hs	39
-SummarySpec	./test/SummarySpec.hs	1
-ToDate	./src/YearlySelectionType.hs	4
-ToField Account	./src/Account.hs	24
-ToField Amount	./src/Amount.hs	64
-ToField Category	./src/Category.hs	29
-ToField Date	./src/Date.hs	28
-ToField Name	./src/Name.hs	20
-ToField Note	./src/Note.hs	20
-ToRecord Transaction	./src/Transaction.hs	64
-Topic	./src/Help.hs	11
-TopicDetail	./src/Help.hs	11
-TopicHelp	./src/Help.hs	11
-TopicImport	./src/Help.hs	11
-TopicSort	./src/Help.hs	11
-TopicSummary	./src/Help.hs	11
-TopicVersion	./src/Help.hs	11
-Transaction	./src/Transaction.hs	28
-Transaction	./src/Transaction.hs	28
-TransactionList	./src/TransactionList.hs	34
-TransactionListSpec	./test/TransactionListSpec.hs	1
-TransactionSpec	./test/TransactionSpec.hs	1
-Value	./src/Configuration.hs	16
-Version	./src/Command.hs	31
-VersionNumber	./src/VersionNumber.hs	1
-VersionNumberSpec	./test/VersionNumberSpec.hs	1
-Yearly	./src/Command.hs	27
-YearlySelectionType	./src/YearlySelectionType.hs	1
-abs	./src/Amount.hs	44
-accountName	./src/Account.hs	15
-accountNamePart	./src/ImportFileName.hs	18
-allCategories	./test/SummarySpec.hs	20
-alreadyAnAccountName	./src/Import.hs	53
-amount	./src/Amount.hs	14
-atKey	./src/Configuration.hs	19
-averageTransactionsPerMonth	./src/TransactionList.hs	67
-budget	./app/Budget.hs	29
-catchIODomain	./src/Domain.hs	16
-catchShowIO	./src/CatchShowIO.hs	13
-catchShowIOE	./src/CatchShowIO.hs	24
-categoriesFromByteString	./src/CategoryList.hs	26
-categoriesFromFile	./src/CategoryList.hs	20
-categoryName	./src/Category.hs	18
-categorySelection	./src/CategorySelection.hs	23
-categorySelector	./src/CategorySelection.hs	33
-categoryTotals	./src/Summary.hs	21
-changeAccount	./src/Import.hs	40
-checkNotEmpty	./src/ImportFileName.hs	27
-checkNotEmpty	./src/TransactionList.hs	84
-command	./src/Command.hs	38
-command	./src/Command.hs	48
-configFilePath	./app/Budget.hs	26
-day	./src/Date.hs	19
-day1	./test/SummarySpec.hs	15
-day2	./test/SummarySpec.hs	15
-day2	./test/SummarySpec.hs	17
-day3	./test/SummarySpec.hs	15
-day3	./test/SummarySpec.hs	18
-decodeCategories	./src/Category.hs	35
-decodeCategoriesFromFile	./src/Category.hs	41
-detail	./src/Detail.hs	89
-detailCategorySelection	./src/Command.hs	22
-detailLines	./src/Detail.hs	32
-detailOrdering	./src/Sorting.hs	77
-detailOrderings	./src/Sorting.hs	102
-detailPeriod	./src/Command.hs	23
-detailSortingCriteria	./src/Command.hs	24
-detailTitle	./src/Detail.hs	73
-detailTransactionFilePath	./src/Command.hs	21
-directoryContents	./src/ImportFileName.hs	31
-divideBy	./src/Amount.hs	55
-doCommand	./app/Budget.hs	37
-doHelp	./src/Help.hs	27
-domain	./src/Domain.hs	25
-equals	./src/Command.hs	40
-equals	./src/Command.hs	54
-equals	./src/Help.hs	15
-excluded	./src/CategorySelection.hs	28
-exitWithMsg	./src/ExitWithMsg.hs	5
-extractAccountNamePart	./src/ImportFileName.hs	13
-fieldToString	./src/FieldToString.hs	12
-filterPostedOrAlreadyAccount	./src/Import.hs	50
-foldOrdering	./src/Sorting.hs	105
-footer	./src/Detail.hs	60
-formatDate	./src/Detail.hs	50
-fromFile	./src/Configuration.hs	35
-fromInteger	./src/Amount.hs	47
-fromPeriod	./src/TransactionList.hs	88
-fromString	./src/Configuration.hs	24
-help	./src/Help.hs	23
-importDirectory	./src/ImportFileName.hs	21
-importTransactions	./src/Import.hs	17
-isCSVFile	./src/IsCsvFile.hs	7
-lengthLabel	./src/Detail.hs	53
-lowerCase	./src/Command.hs	51
-main	./Setup.hs	2
-main	./app/Budget.hs	21
-major	./src/VersionNumber.hs	4
-maybeToEither	./src/MaybeToEither.hs	4
-minor	./src/VersionNumber.hs	5
-months	./src/Period.hs	33
-negate	./src/Amount.hs	46
-number	./src/Amount.hs	49
-parseField	./src/Account.hs	19
-parseField	./src/Amount.hs	59
-parseField	./src/Category.hs	27
-parseField	./src/Date.hs	32
-parseField	./src/Name.hs	18
-parseField	./src/Note.hs	18
-parseRecord	./src/Category.hs	22
-parseRecord	./src/Transaction.hs	54
-patch	./src/VersionNumber.hs	6
-period	./src/Period.hs	29
-periodFromMonth	./src/Period.hs	44
-periodFromMonthString	./src/Period.hs	50
-periodFromStrings	./src/Period.hs	36
-periodFromYear	./src/Period.hs	47
-periodFromYearString	./src/Period.hs	57
-prettyLine	./src/Detail.hs	38
-printConfig	./src/Help.hs	220
-readCriteria	./src/Sorting.hs	46
-readCriterion	./src/Sorting.hs	57
-readsPrec	./src/Amount.hs	33
-runDomain	./src/Domain.hs	28
-same	./src/Same.hs	4
-sameTransaction	./src/Transaction.hs	37
-shouldBeLine	./test/ShouldBeOutput.hs	9
-shouldBeOutput	./test/ShouldBeOutput.hs	6
-show	./src/Amount.hs	24
-show	./src/CategorySelection.hs	52
-show	./src/Date.hs	26
-show	./src/Name.hs	15
-show	./src/Note.hs	15
-show	./src/Period.hs	26
-show	./src/SummaryLine.hs	16
-show	./src/VersionNumber.hs	11
-showDuplicates	./src/Import.hs	28
-signum	./src/Amount.hs	45
-simplified	./test/TransactionListSpec.hs	19
-simplified	./test/TransactionSpec.hs	12
-sortWith	./src/Summary.hs	29
-sortWithCriteria	./src/Sorting.hs	110
-spec	./test/AccountSpec.hs	8
-spec	./test/AmountSpec.hs	12
-spec	./test/CategoryListSpec.hs	16
-spec	./test/CategorySelectionSpec.hs	17
-spec	./test/CategorySpec.hs	11
-spec	./test/CommandSpec.hs	15
-spec	./test/ConfigurationSpec.hs	8
-spec	./test/DetailSpec.hs	26
-spec	./test/DomainSpec.hs	9
-spec	./test/HelpSpec.hs	7
-spec	./test/ImportFileNameSpec.hs	9
-spec	./test/ImportSpec.hs	14
-spec	./test/NoteSpec.hs	9
-spec	./test/PeriodSpec.hs	7
-spec	./test/SortingSpec.hs	16
-spec	./test/SummarySpec.hs	23
-spec	./test/TransactionListSpec.hs	32
-spec	./test/TransactionSpec.hs	20
-spec	./test/VersionNumberSpec.hs	8
-stringToField	./src/FieldToString.hs	15
-summarizeTransactionsMonths	./src/TransactionList.hs	70
-summary	./src/Summary.hs	62
-summaryCategorySelection	./src/Command.hs	17
-summaryLineAmount	./src/SummaryLine.hs	9
-summaryLineAverage	./src/SummaryLine.hs	10
-summaryLineCategory	./src/SummaryLine.hs	8
-summaryLines	./src/Summary.hs	36
-summaryOrdering	./src/Sorting.hs	95
-summaryPeriod	./src/Command.hs	18
-summarySortingCriteria	./src/Command.hs	19
-summaryTitle	./src/Summary.hs	43
-summaryTransactionFilePath	./src/Command.hs	16
-theDay	./src/Date.hs	22
-toField	./src/Account.hs	25
-toField	./src/Amount.hs	65
-toField	./src/Category.hs	30
-toField	./src/Date.hs	29
-toField	./src/Name.hs	21
-toField	./src/Note.hs	21
-toRecord	./src/Transaction.hs	65
-topic	./src/Help.hs	14
-topic	./src/Help.hs	21
-total	./src/Amount.hs	52
-totalLabel	./src/Detail.hs	47
-totalLabel	./src/Summary.hs	33
-totalTransactions	./src/TransactionList.hs	64
-transactionAccount	./src/Transaction.hs	28
-transactionAmount	./src/Transaction.hs	33
-transactionCategory	./src/Transaction.hs	32
-transactionDate	./src/Transaction.hs	29
-transactionDeduplicate	./src/TransactionList.hs	57
-transactionIntersect	./src/TransactionList.hs	54
-transactionName	./src/Transaction.hs	31
-transactionNotes	./src/Transaction.hs	30
-transactionsFromByteString	./src/TransactionList.hs	42
-transactionsFromFile	./src/TransactionList.hs	36
-transactionsPeriod	./src/TransactionList.hs	77
-transactionsToByteString	./src/TransactionList.hs	50
-transactionsToFile	./src/TransactionList.hs	46
-validateCriteria	./src/Sorting.hs	113
-valueAtKeyFromFile	./src/Configuration.hs	41
-versionNumber	./src/VersionNumber.hs	16
-with	./src/Command.hs	62
-withCategoryIn	./src/Transaction.hs	45
-within	./src/Period.hs	62
-withinPeriod	./src/Transaction.hs	49
-writeTestFile	./test/CategoryListSpec.hs	11
-writeTestFile	./test/TransactionListSpec.hs	27
-wrongCriteriaMessage	./src/Sorting.hs	124
-yearlyPeriod	./src/Command.hs	28
-yearlySelectionType	./src/Command.hs	27
+
+./Setup.hs,15
+main main1,2
+
+./app/Budget.hs,124
+module Main Main1,2
+main main20,21
+configFilePath configFilePath25,26
+budget budget28,29
+doCommand doCommand36,37
+
+./test/AccountSpec.hs,50
+module AccountSpecAccountSpec0,1
+spec spec7,8
+
+./test/TransactionListSpec.hs,132
+module TransactionListSpecTransactionListSpec0,1
+simplified simplified18,19
+writeTestFile writeTestFile26,27
+spec spec31,32
+
+./test/PeriodSpec.hs,48
+module PeriodSpecPeriodSpec0,1
+spec spec6,7
+
+./test/ConfigurationSpec.hs,63
+module ConfigurationSpec ConfigurationSpec0,1
+spec spec7,8
+
+./test/CategoryListSpec.hs,97
+module CategoryListSpecCategoryListSpec0,1
+writeTestFile writeTestFile10,11
+spec spec15,16
+
+./test/YearlySpec.hs,48
+module YearlySpecYearlySpec0,1
+spec spec5,6
+
+./test/CategorySpec.hs,54
+module CategorySpecCategorySpec1,2
+spec spec10,11
+
+./test/ShouldBeOutput.hs,108
+module ShouldBeOutput ShouldBeOutput0,1
+shouldBeOutput shouldBeOutput5,6
+shouldBeLine shouldBeLine8,9
+
+./test/SortingSpec.hs,52
+module SortingSpecSortingSpec0,1
+spec spec15,16
+
+./test/CategorySelectionSpec.hs,72
+module CategorySelectionSpecCategorySelectionSpec0,1
+spec spec16,17
+
+./test/VersionNumberSpec.hs,62
+module VersionNumberSpecVersionNumberSpec0,1
+spec spec7,8
+
+./test/SummarySpec.hs,155
+module SummarySpecSummarySpec0,1
+day1, day2, day3 day314,15
+day1, day2,day214,15
+day1,day114,15
+day2 day216,17
+day3 day317,18
+spec spec19,20
+
+./test/DetailSpec.hs,50
+module DetailSpecDetailSpec1,2
+spec spec25,26
+
+./test/DomainSpec.hs,49
+module DomainSpec DomainSpec0,1
+spec spec8,9
+
+./test/NoteSpec.hs,45
+module NoteSpec NoteSpec1,2
+spec spec8,9
+
+./test/AmountSpec.hs,50
+module AmountSpecAmountSpec0,1
+spec spec11,12
+
+./test/HelpSpec.hs,44
+module HelpSpecHelpSpec0,1
+spec spec6,7
+
+./test/Spec.hs,0
+
+./test/TransactionSpec.hs,89
+module TransactionSpecTransactionSpec0,1
+simplified simplified11,12
+spec spec19,20
+
+./test/ImportSpec.hs,50
+module ImportSpecImportSpec0,1
+spec spec13,14
+
+./test/CommandSpec.hs,52
+module CommandSpecCommandSpec0,1
+spec spec14,15
+
+./test/ImportFileNameSpec.hs,64
+module ImportFileNameSpecImportFileNameSpec0,1
+spec spec8,9
+
+./src/CategorySelection.hs,494
+data CategorySelection CategorySelection16,17
+data CategorySelection = AllCategoriesAllCategories16,17
+                       | SingleCategory SingleCategory17,18
+                       | CategoriesFromFile CategoriesFromFile18,19
+type CategorySelector CategorySelector21,22
+allCategories allCategories23,24
+categorySelection categorySelection26,27
+excluded excluded31,32
+categorySelector categorySelector36,37
+instance Show Show CategorySelection54,55
+    show show55,56
+
+./src/VersionNumber.hs,299
+module VersionNumberVersionNumber0,1
+data VersionNumber = VersionNumber { major major3,4
+                                   , minor minor4,5
+                                   , patch patch5,6
+instance Show Show VersionNumber8,9
+        show show10,11
+versionNumber versionNumber15,16
+
+./src/CategoryList.hs,140
+type CategoryList CategoryList16,17
+categoriesFromFile categoriesFromFile19,20
+categoriesFromByteString categoriesFromByteString25,26
+
+./src/Detail.hs,247
+module DetailDetail0,1
+detailLines detailLines31,32
+prettyLine prettyLine37,38
+totalLabel totalLabel46,47
+formatDate formatDate49,50
+lengthLabel lengthLabel52,53
+footer footer59,60
+detailTitle detailTitle72,73
+detail detail88,89
+
+./src/Summary.hs,238
+module Summary Summary0,1
+type NbMonths NbMonths19,20
+categoryTotals categoryTotals20,21
+sortWith sortWith28,29
+totalLabel totalLabel32,33
+summaryLines summaryLines35,36
+summaryTitle summaryTitle42,43
+summary summary61,62
+
+./src/Period.hs,401
+data Period Period20,21
+data Period = Period Period20,21
+instance Show Show Period23,24
+        show show25,26
+period period28,29
+months months32,33
+periodFromStrings periodFromStrings35,36
+periodFromMonth periodFromMonth43,44
+periodFromYear periodFromYear46,47
+periodFromMonthString periodFromMonthString49,50
+periodFromYearString periodFromYearString56,57
+within within61,62
+
+./src/Account.hs,266
+data Account Account14,15
+data Account = Account Account14,15
+data Account = Account { accountName accountName14,15
+instance FromField FromField Account17,18
+    parseField parseField18,19
+instance ToField ToField Account23,24
+    toField toField24,25
+
+./src/YearlySelection.hs,269
+module YearlySelection YearlySelection0,1
+data YearlySelectionType YearlySelectionType3,4
+data YearlySelectionType = Absolute Absolute3,4
+data YearlySelectionType = Absolute | Running Running3,4
+data YearlySelectionType = Absolute | Running | ToDateToDate3,4
+
+./src/Same.hs,37
+module Same Same0,1
+same same3,4
+
+./src/Category.hs,457
+data Category Category17,18
+data Category = Category Category17,18
+data Category = Category { categoryName categoryName17,18
+instance FromRecord FromRecord Category20,21
+    parseRecord parseRecord21,22
+instance FromField FromField Category25,26
+    parseField parseField26,27
+instance ToField ToField Category28,29
+    toField toField29,30
+decodeCategories decodeCategories34,35
+decodeCategoriesFromFile decodeCategoriesFromFile40,41
+
+./src/ExitWithMsg.hs,65
+module ExitWithMsg ExitWithMsg0,1
+exitWithMsg exitWithMsg4,5
+
+./src/CatchShowIO.hs,100
+module CatchShowIO CatchShowIO0,1
+catchShowIO catchShowIO12,13
+catchShowIOE catchShowIOE23,24
+
+./src/Date.hs,251
+newtype Date Date15,16
+day day18,19
+theDay theDay21,22
+instance Show Show Date24,25
+    show show25,26
+instance ToField ToField Date27,28
+    toField toField28,29
+instance FromField FromField Date30,31
+    parseField parseField31,32
+
+./src/Note.hs,215
+newtype Note Note10,11
+instance Show Show Note13,14
+    show show14,15
+instance FromField FromField Note16,17
+    parseField parseField17,18
+instance ToField ToField Note19,20
+    toField toField20,21
+
+./src/Help.hs,671
+module Help Help0,1
+data Topic Topic10,11
+data Topic = TopicHelp TopicHelp10,11
+data Topic = TopicHelp | TopicSummary TopicSummary10,11
+data Topic = TopicHelp | TopicSummary | TopicDetail TopicDetail10,11
+data Topic = TopicHelp | TopicSummary | TopicDetail | TopicImport TopicImport10,11
+data Topic = TopicHelp | TopicSummary | TopicDetail | TopicImport | TopicSort TopicSort10,11
+data Topic = TopicHelp | TopicSummary | TopicDetail | TopicImport | TopicSort |Â TopicConfig | TopicVersionTopicVersion10,11
+topic topic13,14
+topic args | args `equals`equals14,15
+topic topic20,21
+help help22,23
+doHelp doHelp26,27
+printConfig printConfig219,220
+
+./src/MaybeToEither.hs,73
+module MaybeToEither MaybeToEither0,1
+maybeToEither maybeToEither3,4
+
+./src/Name.hs,215
+newtype Name Name10,11
+instance Show Show Name13,14
+    show show14,15
+instance FromField FromField Name16,17
+    parseField parseField17,18
+instance ToField ToField Name19,20
+    toField toField20,21
+
+./src/Domain.hs,109
+type Domain Domain13,14
+catchIODomain catchIODomain15,16
+domain domain24,25
+runDomain runDomain27,28
+
+./src/TransactionList.hs,636
+type TransactionList TransactionList33,34
+transactionsFromFile transactionsFromFile35,36
+transactionsFromByteString transactionsFromByteString41,42
+transactionsToFile transactionsToFile45,46
+transactionsToByteString transactionsToByteString49,50
+transactionIntersect transactionIntersect53,54
+transactionDeduplicate transactionDeduplicate56,57
+totalTransactions totalTransactions63,64
+averageTransactionsPerMonth averageTransactionsPerMonth66,67
+summarizeTransactionsMonths summarizeTransactionsMonths69,70
+transactionsPeriod transactionsPeriod76,77
+checkNotEmpty checkNotEmpty83,84
+fromPeriod fromPeriod87,88
+
+./src/SummaryLine.hs,328
+module SummaryLine SummaryLine0,1
+data SummaryLine = SummaryLine { summaryLineCategory summaryLineCategory7,8
+                               , summaryLineAmount summaryLineAmount8,9
+                               , summaryLineAverage summaryLineAverage9,10
+instance Show Show SummaryLine13,14
+        show show15,16
+
+./src/DecodeString.hs,37
+module DecodeStringDecodeString0,1
+
+./src/Command.hs,976
+data CommandCommand14,15
+    = Summary Summary15,16
+    = Summary { summaryTransactionFilePath summaryTransactionFilePath15,16
+              , summaryCategorySelection summaryCategorySelection16,17
+              , summaryPeriod summaryPeriod17,18
+              , summarySortingCriteria summarySortingCriteria18,19
+    | Detail Detail20,21
+    | Detail  { detailTransactionFilePath detailTransactionFilePath20,21
+              , detailCategorySelection detailCategorySelection21,22
+              , detailPeriod detailPeriod22,23
+              , detailSortingCriteria detailSortingCriteria23,24
+    | Import Import25,26
+    | Yearly Yearly26,27
+    | Yearly { yearlySelectionType yearlySelectionType26,27
+             , yearlyPeriod yearlyPeriod27,28
+    | Help Help29,30
+    | VersionVersion30,31
+command command37,38
+  | cmd `equals`equals39,40
+command command47,48
+lowerCase lowerCase50,51
+equals equals53,54
+cmd `with`with61,62
+
+./src/Amount.hs,608
+data Amount Amount10,11
+data Amount = Amount Amount10,11
+amount amount13,14
+instance Show Show Amount21,22
+        show show23,24
+instance Read Read Amount30,31
+        readsPrec readsPrec32,33
+instance Num Num Amount39,40
+        (+(+)41,42
+        (*(*)42,43
+        abs abs43,44
+        signum signum44,45
+        negate negate45,46
+        fromInteger fromInteger46,47
+number number48,49
+total total51,52
+divideBy divideBy54,55
+instance FromField FromField Amount57,58
+    parseField parseField58,59
+instance ToField ToField Amount63,64
+    toField toField64,65
+
+./src/SelectionType.hs,138
+module SelectionType SelectionType0,1
+data SelectionType = Selected Selected3,4
+data SelectionType = Selected | ExcludedExcluded3,4
+
+./src/ImportFileName.hs,251
+module ImportFileName ImportFileName0,1
+extractAccountNamePart extractAccountNamePart12,13
+accountNamePart accountNamePart17,18
+importDirectory importDirectory20,21
+checkNotEmpty checkNotEmpty26,27
+directoryContents directoryContents30,31
+
+./src/Import.hs,257
+module Import Import0,1
+importTransactions importTransactions16,17
+showDuplicates showDuplicates27,28
+changeAccount changeAccount39,40
+filterPostedOrAlreadyAccount filterPostedOrAlreadyAccount49,50
+alreadyAnAccountName alreadyAnAccountName52,53
+
+./src/Configuration.hs,202
+type Key Key14,15
+type Value Value15,16
+type Configuration Configuration16,17
+atKey atKey18,19
+fromString fromString23,24
+fromFile fromFile34,35
+valueAtKeyFromFile valueAtKeyFromFile40,41
+
+./src/FieldToString.hs,110
+module FieldToString FieldToString0,1
+fieldToString fieldToString11,12
+stringToField stringToField14,15
+
+./src/Message.hs,28
+module Message Message0,1
+
+./src/IsCsvFile.hs,57
+module IsCsvFile IsCsvFile0,1
+isCSVFile isCSVFile6,7
+
+./src/Sorting.hs,1128
+module Sorting Sorting0,1
+type SortingCriteria SortingCriteria18,19
+data Direction Direction19,20
+data Direction = Asc Asc19,20
+data Direction = Asc | DescDesc19,20
+data SortCriterion SortCriterion22,23
+    AccountAscAccountAsc23,24
+  | AccountDescAccountDesc24,25
+  | CategoryAscCategoryAsc25,26
+  | CategoryDescCategoryDesc26,27
+  | DateAscDateAsc27,28
+  | DateDescDateDesc28,29
+  | AmountAscAmountAsc29,30
+  | AmountDescAmountDesc30,31
+  | NameAscNameAsc31,32
+  | NameDescNameDesc32,33
+  | NotesAscNotesAsc33,34
+  | NotesDescNotesDesc34,35
+data CommandCriteria CommandCriteria37,38
+data CommandCriteria = DetailSortingCriteriaDetailSortingCriteria37,38
+                     | SummarySortingCriteriaSummarySortingCriteria38,39
+readCriteria readCriteria45,46
+readCriterion readCriterion56,57
+detailOrdering detailOrdering76,77
+summaryOrdering summaryOrdering94,95
+detailOrderings detailOrderings101,102
+foldOrdering foldOrdering104,105
+sortWithCriteria sortWithCriteria109,110
+validateCriteria validateCriteria112,113
+wrongCriteriaMessage wrongCriteriaMessage123,124
+
+./src/Transaction.hs,813
+data Transaction Transaction27,28
+data Transaction = Transaction Transaction27,28
+data Transaction = Transaction { transactionAccount transactionAccount27,28
+                               , transactionDate transactionDate28,29
+                               , transactionNotes transactionNotes29,30
+                               , transactionName transactionName30,31
+                               , transactionCategory transactionCategory31,32
+                               , transactionAmount transactionAmount32,33
+sameTransaction sameTransaction36,37
+withCategoryIn withCategoryIn44,45
+withinPeriod withinPeriod48,49
+instance FromRecord FromRecord Transaction52,53
+    parseRecord parseRecord53,54
+instance ToRecord ToRecord Transaction63,64
+    where toRecord toRecord64,65

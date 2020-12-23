@@ -7,7 +7,7 @@ import Message ( Message )
 import Period
 import Same
 import Sorting
-import YearlySelectionType
+import YearlySelection
 
 import Control.Monad.Except
 import Data.Char

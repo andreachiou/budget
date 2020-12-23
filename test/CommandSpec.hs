@@ -7,7 +7,7 @@ import Sorting
 import Category
 import Period
 import SelectionType
-import YearlySelectionType
+import YearlySelection
 
 import Control.Monad.Except
 import Test.Hspec

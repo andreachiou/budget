@@ -2,6 +2,7 @@
 module Main where
 
 import CategorySelection
+import CurrentDay
 import Command
 import Configuration
 import Detail
@@ -13,6 +14,8 @@ import ImportFileName
 import Summary
 import TransactionList
 import VersionNumber 
+import Yearly
+import YearlySelection
 
 import Control.Monad.Except
 import System.Directory
@@ -74,7 +77,15 @@ doCommand cfg (Import importFilePath Nothing) = do
             directory <- liftIO (importDirectory importFilePath)
             either (liftIO . exitWithMsg) (mapM_ (\filePath -> doCommand cfg (Import filePath Nothing))) directory
 
-doCommand _ (Yearly _ _) = undefined
+doCommand cfg (Yearly yst  mPeriod) = do
+    mainFilePath <- cfg `atKey` "TRANSACTIONS"
+    transactions <- transactionsFromFile mainFilePath
+    (y,m) <- liftIO (currentMonth mPeriod)
+    let ys = yearlySelection y m yst
+    let report = pure (yearly ys (const True) transactions)
+    liftIO (either exitWithMsg (putStr . unlines) report)
+
+
 
 doCommand _ (Help arg) = liftIO (help arg)
 

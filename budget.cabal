@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 66c2fb6b7927e34a10e5593d62e4baf9f88eb7faf1977627a356ed82cd96a78d
+-- hash: bf091e8de781181483a92234cac81194df154af92489cccfab943a0f643f7e85
 
 name:           budget
 version:        1.0.1.0
@@ -35,6 +35,7 @@ library
       CategorySelection
       Command
       Configuration
+      CurrentDay
       Date
       DecodeString
       Detail

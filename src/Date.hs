@@ -2,7 +2,8 @@ module Date ( Date (..)
             , day
             , plus
             , plus1Month
-            , theDay )
+            , theDay
+            , yearMonthDay)
     where
 
 import Data.Time 
@@ -29,6 +30,9 @@ plus (Date d) n = Date (addDays n d)
 
 plus1Month :: Date -> Date
 plus1Month (Date d) = Date (addGregorianMonthsClip 1 d)
+
+yearMonthDay :: Date -> (Integer, Int, Int)
+yearMonthDay = toGregorian . day
 
 instance Show Date where
     show (Date d) =  formatTime defaultTimeLocale "%m/%d/%Y" d

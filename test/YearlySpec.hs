@@ -51,3 +51,9 @@ spec = do
                 it "for a running year" $ do
                     yearlyTitle (yearlySelection 2020 4 Running) allCategories `shouldBeLine`
                         "Yearly report for all categories : 2019-May-01 2020-Apr-30 | 2018-May-01 2019-Apr-30"
+
+        describe "yearly footer" $ do
+            it "show the total for all categories listed for the two years" $ do
+                let transactions = [t0, t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11]
+                yearlyFooter (yearlySelection 2020 1 Absolute) allCategories transactions `shouldBeLine`
+                    "TOTAL : 492.00 | 294.21"

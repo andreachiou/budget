@@ -94,6 +94,9 @@ cmd `with` (opt:arg:args) | opt `equals` "period"       = cmd `with` ("-p":arg:a
 cmd `with` (opt:arg:args) | opt `equals` "month"        = cmd `with` ("-m":arg:args) 
 cmd `with` (opt:arg:args) | opt `equals` "year"         = cmd `with` ("-y":arg:args) 
 cmd `with` (opt:arg:args) | opt `equals` "sortby"       = cmd `with` ("-s":arg:args) 
+cmd `with` (opt:arg:args) | opt `equals` "absolute"     = cmd `with` ("-a":arg:args)
+cmd `with` (opt:arg:args) | opt `equals` "running"      = cmd `with` ("-r":arg:args)
+cmd `with` (opt:arg:args) | opt `equals` "todate"       = cmd `with` ("-t":arg:args)
                                     
 cmd@(Detail _ _ _ _) `with` ("-t":arg:args) =
     cmd { detailTransactionFilePath = Just arg } `with` args

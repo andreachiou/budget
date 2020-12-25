@@ -8,12 +8,13 @@ import Configuration
 import System.Directory
 import Control.Monad.Except
 
-data Topic = TopicHelp | TopicSummary | TopicDetail | TopicImport | TopicSort | TopicConfig | TopicVersion
+data Topic = TopicHelp | TopicSummary | TopicDetail | TopicYearly | TopicImport | TopicSort | TopicConfig | TopicVersion
     deriving (Eq, Show)
 
 topic :: String -> Topic
 topic args | args `equals` "summary" = TopicSummary
 topic args | args `equals` "detail"  = TopicDetail
+topic args | args `equals` "yearly"  = TopicYearly
 topic args | args `equals` "import"  = TopicImport
 topic args | args `equals` "sort"    = TopicSort
 topic args | args `equals` "config"  = TopicConfig
@@ -31,6 +32,7 @@ doHelp TopicHelp =
                   , "commands are:"
                   , "   summary"
                   , "   detail"
+                  , "   yearly"
                   , "   import"
                   , "   sort"
                   , "   config"
@@ -143,6 +145,56 @@ doHelp TopicDetail =
         , ""
         , "will print possible sort criteria"
         ]
+
+doHelp TopicYearly =
+    (putStr . unlines)
+        ["     budget yearly"
+        , ""
+        , "(or budget Year or budget y ..)"
+        , "will print the yearly category by category comparison report for all the transactions in the main transaction csv file."
+        , ""
+        , "    budget yearly -a"
+        , "    budget yearly absolute"
+        , "    budget yearly abs"
+        , ""
+        , "will print the yearly report for a year and the previous year"
+        , ""
+        , "    budget yearly -r"
+        , "    budget yearly runnning"
+        , "    budget yearly run"
+        , ""
+        , "will print the yearly report for the last 12 months and the 12 months before"
+        , ""
+        , "    budget yearly -t"
+        , "    budget yearly todate"
+        , "    budget yearly tod"
+        , ""
+        , "will print the yearly report for the year to date compared with the whole previous year"
+        , ""
+        , "    budget y -c \"Business Expenses\""
+        , "    budget y category \"Business Expenses\""
+        , "    budget y cat \"Business Expenses\""
+        , ""
+        , "will print the yearly report for all transactions having the category 'Business Expenses'."
+        , ""
+        , "    budget y -x \"Business Expenses\""
+        , "    budget y except \"Business Expenses\""
+        , "    budget y ex \"Business Expenses\""
+        , ""
+        , "will print the yearly report for all transactions having another category than 'Business Expenses'."
+        , ""
+        , "    budget yearly -c Categories.csv"
+        , "    budget yearly categories Categories.csv"
+        , "    budget yearly cat Categories.csv"
+        , ""
+        , "will print the yearly report for categories given in the selection file `Categories.csv` only."
+        , ""
+        , "    budget yearly -x Categories.csv"
+        , "    budget yearly except Categories.csv"
+        , "    budget yearly ex Categories.csv"
+        , ""
+        , "will print the yearly report for all categories except those given in the selection file `Categories.csv`."]
+
 
 doHelp TopicImport =
     (putStr . unlines)

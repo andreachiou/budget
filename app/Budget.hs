@@ -77,12 +77,13 @@ doCommand cfg (Import importFilePath Nothing) = do
             directory <- liftIO (importDirectory importFilePath)
             either (liftIO . exitWithMsg) (mapM_ (\filePath -> doCommand cfg (Import filePath Nothing))) directory
 
-doCommand cfg (Yearly yst  mPeriod) = do
+doCommand cfg (Yearly yst  mPeriod catSel) = do
     mainFilePath <- cfg `atKey` "TRANSACTIONS"
     transactions <- transactionsFromFile mainFilePath
+    selector <- categorySelector catSel
     (y,m) <- liftIO (currentMonth mPeriod)
     let ys = yearlySelection y m yst
-    let report = pure (yearly ys (const True) transactions)
+    let report = pure (yearly ys catSel selector transactions)
     liftIO (either exitWithMsg (putStr . unlines) report)
 
 

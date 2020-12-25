@@ -11,15 +11,17 @@ import Transaction          (Transaction (..))
 import TransactionList      (fromPeriod, groupByCategory, totalTransactions)
 import YearlyLine ( YearlyLine (..))
 import YearlySelection      (YearlySelection (..))
-import CategorySelection    (CategorySelector)
+import CategorySelection    (CategorySelection (..), CategorySelector)
 import Text.Printf
 
 type CategoryTotal = (Category,Amount)
 
-yearly :: YearlySelection -> CategorySelector -> [Transaction] -> [String]
-yearly ys catSel ts = [yearlyTitle ys catSel]
-                    ++ yearlyLines ys catSel ts 
-                    ++ [yearlyFooter ys catSel ts]
+yearly :: YearlySelection -> CategorySelection -> CategorySelector -> [Transaction] -> [String]
+yearly ys catSel selector ts = [yearlyTitle ys catSel]
+                    ++ yearlyLines ys selector transactions
+                    ++ [yearlyFooter ys selector transactions]
+    where
+        transactions = filter selector ts
 
 yearlyLines :: YearlySelection -> CategorySelector -> [Transaction] -> [String]
 yearlyLines (YearlySelection _ cy py) _ ts = map show $ categoryTotals cy py ts
@@ -41,8 +43,8 @@ zipYearlyGroups ((cc,ca):cgs) ((pc,pa):pgs) | cc < pc = YearlyLine cc ca 0 : zip
 zipYearlyGroups ((cc,ca):cgs) ((pc,pa):pgs) | cc > pc = YearlyLine pc 0 pa : zipYearlyGroups ((cc,ca):cgs) pgs
 zipYearlyGroups ((cc,ca):cgs) ((_,pa):pgs) | otherwise = YearlyLine cc ca pa : zipYearlyGroups cgs pgs
 
-yearlyTitle :: YearlySelection -> CategorySelector -> String 
-yearlyTitle   ys _ = printf "Yearly report for all categories : %s" (show ys)
+yearlyTitle :: YearlySelection -> CategorySelection -> String 
+yearlyTitle   ys catSel = printf "Yearly report for %s : %s" (show catSel) (show ys)
 
 yearlyFooter :: YearlySelection -> CategorySelector -> [Transaction] -> String
 yearlyFooter (YearlySelection _ cy py) _ ts = printf "%-49s:%10s |%10s" "TOTAL" (show ct) (show pt)

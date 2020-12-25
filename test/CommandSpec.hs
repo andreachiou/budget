@@ -272,28 +272,40 @@ spec = do
             it "recognize the yearly command with no arguments" $ do
                 let args = words "yearly"
                 cmd <- runExceptT $ command args
-                cmd `shouldBe` Right (Yearly Absolute Nothing)
+                cmd `shouldBe` Right (Yearly Absolute Nothing AllCategories)
 
             it "recognize the yearly command with absolute argument" $ do
                 let args = words "yearly -a"
                 cmd <- runExceptT $ command args
-                cmd `shouldBe` Right (Yearly Absolute Nothing)
+                cmd `shouldBe` Right (Yearly Absolute Nothing AllCategories)
 
             it "recognize the yearly command with running argument" $ do
                 let args = words "yearly -r"
                 cmd <- runExceptT $ command args
-                cmd `shouldBe` Right (Yearly Running Nothing)
+                cmd `shouldBe` Right (Yearly Running Nothing AllCategories)
 
             it "recognize the yearly command with to date argument" $ do
                 let args = words "yearly -t"
                 cmd <- runExceptT $ command args
-                cmd `shouldBe` Right (Yearly ToDate Nothing)
+                cmd `shouldBe` Right (Yearly ToDate Nothing AllCategories)
 
-            it "recognize the yeally command with a month option" $ do
+            it "recognize the yearly command with a month option" $ do
                 let args = words "yearly -m 2021 03"
                 cmd <- runExceptT $ command args
                 cmd `shouldBe` 
-                    Right (Yearly Absolute (Just (Period (theDay 2021 03 01) (theDay 2021 03 31))))
+                    Right (Yearly Absolute (Just (Period (theDay 2021 03 01) (theDay 2021 03 31))) AllCategories)
+
+            it "recognize the yearly command with a categories file argument" $ do
+                let args1 = words "yearly -c IncomeCategories.csv"
+                cmd <- runExceptT $ command args1
+                cmd `shouldBe` 
+                    Right (Yearly Absolute Nothing (CategoriesFromFile "IncomeCategories.csv" Selected))
+
+            it "recognize the yearly command with an excluded category argument" $ do
+                let args = words "yearly -x Groceries"
+                cmd <- runExceptT $ command args
+                cmd `shouldBe` 
+                    Right (Yearly Absolute Nothing (SingleCategory (Category "Groceries") Excluded))
 
         describe "Help" $ do
             it "recognize the help command" $ do
